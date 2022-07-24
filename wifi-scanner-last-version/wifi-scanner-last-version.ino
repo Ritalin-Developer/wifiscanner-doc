@@ -1,8 +1,8 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 
-const char* ssid = "mati lampu guys"; //Nama SSID AP/Hotspot
-const char* password = "ayam12345"; //Password Wifi
+const char* ssid = ""; //Nama SSID AP/Hotspot
+const char* password = ""; //Password Wifi
 
 ESP8266WebServer server(80); //Menyatakan Webserver pada port 80
 

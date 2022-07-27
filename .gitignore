@@ -1,3 +1,9 @@
 /ideas
 .env
 .vscode
+LaTexReport/main.aux
+LaTexReport/main.fdb_latexmk
+LaTexReport/main.fls
+LaTexReport/main.log
+LaTexReport/main.out
+LaTexReport/main.synctex.gz

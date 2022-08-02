@@ -61,7 +61,7 @@
 
 \begin{document}
 
-\title{Implementasi Wifi Scanner Dengan NodeMCU dan Integrasi Bot Telegram}
+\title{Implementasi WiFi Scanner Dengan NodeMCU dan Integrasi Bot Telegram}
 
 \author{\IEEEauthorblockN{Ricky}
 	\IEEEauthorblockA{\textit{Teknik Komputer, Fakultas Teknologi Informasi} \\
@@ -115,10 +115,46 @@ Aplikasi Arduino digunakan untuk menulis firmware untuk NodeMCU, kita dapat memp
 Laravel adalah kerangka kerja aplikasi web berbasis PHP yang sumber terbuka, menggunakan konsep Model-View-Controller (MVC). Laravel berada dibawah lisensi MIT, dengan menggunakan GitHub sebagai tempat berbagi kode (Code Base). Kami menggunakan Laravel sebagai teknologi utama dalam pemrograman web gateway penerima hasil pemindaian sinyal WiFi yang nantinya akan diteruskan ke bot Telegram.
 
 \section{Pengerjaan}\label{pengerjaan}
-Pengerjaan dimulai dari menginstall web framework laravel lalu mencari source code program untuk nodemcu firmware dan flash firware menggunakan aplikasi Arduino ke nodemcu. Selanjutnya menghidupkan nodemcu agar terhubung ke lokal WiFi agar dapat internet akses, dan juga kita perlu m
+Pengerjaan dimulai dari menginstall web framework laravel lalu mencari source code program untuk nodemcu firmware dan flash firware menggunakan aplikasi Arduino ke nodemcu. Selanjutnya menghidupkan nodemcu agar terhubung ke lokal WiFi agar dapat internet akses, dan juga kita perlu menjalankan lokal webserver untuk menerima data dari arduino. Adapun beberapa kondisi yang kami uji cobakan adalah sebagai berikut:
 
-\section{Pembahasan}
+\subsection{Uji coba case 1}
+
+\begin{itemize}
+  \item Scanner berada di dalam ruangan
+  \item Target WiFi area berada diluar ruangan
+  \item Terhalang tembok setebal 7cm 
+  \item Memiliki 1 pintu dengan 2 jendela kaca standard
+  \item Lebar ruangan 2,12m x 2,88m
+\end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.38\textwidth]{scanning-result.png}
+  \caption{Scanning Result 1, tidak ada target yang berada dalam satu ruangan}
+\end{figure}
+
+
+\subsection{Uji coba case 2}
+
+\begin{itemize}
+  \item Scanner berada di dalam ruangan
+  \item Target WiFi area berada diluar ruangan dan dalam ruangan
+  \item Terhalang tembok setebal 7cm 
+  \item Memiliki 1 pintu dengan 2 jendela kaca standard
+  \item Lebar ruangan 2,12m x 2,88m
+  \item SSID: PALA-Family merupakan Router ZTE-F609
+  \item SSID: ARES merupakan Hotspot Nirkabel iPhone 11
+\end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.38\textwidth]{scanning-result2.png}
+  \caption{Scanning Result 2, SSID ARES adalah target yang berada dalam satu ruangan}
+\end{figure}
+
+\textit{Figure 4}, Seperti yang dapat dilihat, SSID: PALA-Family memiliki sinyal yang lebih kuat dikarenakan Transmitter WiFi menggunakan antena yang lebih panjang.
 
 \section{Kesimpulan}
 
+Gelombang WiFi adalah jenis radio frekuensi yang merambat melalui udara, jika udara terhambat oleh objek. Dalam kasus pengetesan ini objek berupa tembok dan kaca jendela, maka kekuatan pemancaran WiFi juga dapat melemah begitupun sebaliknya. Faktor lain yang dapat mempengaruhi kekuatan sinyal yaitu pemancar(transmitter) penerima(receiver) sinyal itu sendiri, semakin bagus devicenya semakin kuat pula sinyal WiFi tersebut.
 \end{document}
